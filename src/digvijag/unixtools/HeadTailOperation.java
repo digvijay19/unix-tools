@@ -19,7 +19,7 @@ public class HeadTailOperation {
         String[] lines = fileData.split("\r\n");
         String result = "";
 
-        int i = lines.length-numberOfLines;
+        int i = lines.length - numberOfLines;
         while (i < lines.length) {
             result += "\r\n" + lines[i];
             i++;
