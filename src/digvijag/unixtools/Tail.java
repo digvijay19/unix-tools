@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Tail {
     public static void main(String[] args) {
         String fileName;
-        ArrayList result = new ArrayList();
+        ArrayList<String> result = new ArrayList<String>();
         try {
             fileName = args[0];
             BufferedReader br = new BufferedReader(new FileReader(fileName));

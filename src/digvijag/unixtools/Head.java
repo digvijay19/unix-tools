@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Head {
     public static void main(String[] args) {
         String fileName;
-        ArrayList result = new ArrayList();
+        ArrayList<String> result = new ArrayList<String>();
         try {
             fileName = args[0];
             BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -20,7 +20,7 @@ public class Head {
         } catch (Exception e) {
             System.err.println("Something went wrong");
         }
-        for (Object line : result) {
+        for (String line : result) {
             System.out.println(line);
         }
     }
