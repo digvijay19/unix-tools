@@ -28,4 +28,12 @@ public class CutOperationsTest {
         String fileName = operations.getFileName(args);
         assertEquals(fileName,"a.txt");
     }
+
+    @Test
+    public void testGetCutResult() throws Exception {
+        CutOperations operations = new CutOperations();
+        String data = "a b c";
+        String result = operations.getCutResult(data," ",0);
+        assertEquals(result,"a");
+    }
 }

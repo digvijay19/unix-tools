@@ -30,4 +30,14 @@ public class CutOperations {
         }
         return null;
     }
+
+    public String getCutResult(String fileData, String delimiter, int field) {
+        String result = "";
+        String lines[] = fileData.split("\r\n");
+        for (String line : lines) {
+            String[] fields = line.split(delimiter);
+            result += "\r\n" + fields[field];
+        }
+        return result.trim();
+    }
 }
