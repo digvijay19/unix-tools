@@ -12,7 +12,7 @@ public class CutOperations {
         return 0;
     }
 
-    public String getDelimeter(String[] args) {
+    public String getDelimiter(String[] args) {
         for (String arg : args) {
             if(arg.matches("-d.")){
                 return arg.replace("-d", "");

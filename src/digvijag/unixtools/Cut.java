@@ -9,7 +9,7 @@ public class Cut {
         String fileName, fileData, delimiter;
         try {
             int field = operations.getField(args);
-            delimiter = operations.getDelimeter(args);
+            delimiter = operations.getDelimiter(args);
             fileName = operations.getFileName(args);
             fileData = rf.readFile(fileName);
             String lines[] = fileData.split("\r\n");
