@@ -1,26 +1,21 @@
 package digvijag.unixtools;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
+import digvijag.filesystem.ReadFile;
 
 public class Tail {
     public static void main(String[] args) {
-        String fileName;
-        ArrayList<String> result = new ArrayList<String>();
+        String fileName,fileData, result = "";
+        HeadTailOperation operations = new HeadTailOperation();
+        int numberOfLines;
+
         try {
-            fileName = args[0];
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
-            String currentLine;
-            while ((currentLine = br.readLine()) != null) {
-                result.add(currentLine);
-            }
+            fileName = operations.getFileName(args);
+            numberOfLines = operations.getNumberOfLines(args);
+            fileData = new ReadFile().readFile(fileName);
+            result = operations.getTailLines(fileData, numberOfLines);
         } catch (Exception e) {
             System.err.println("Something went wrong");
         }
-        int length = result.size();
-        for (int i = length-10; i < length; i++) {
-            System.out.println(result.get(i));
-        }
+        System.out.println(result);
     }
 }

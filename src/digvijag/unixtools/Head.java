@@ -5,7 +5,7 @@ import digvijag.filesystem.ReadFile;
 public class Head {
     public static void main(String[] args) {
         String fileName,fileData, result = "";
-        HeadOperation operations = new HeadOperation();
+        HeadTailOperation operations = new HeadTailOperation();
         int numberOfLines;
 
         try {
