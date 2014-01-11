@@ -15,6 +15,6 @@ public class ReadFile {
         } catch (Exception e) {
             System.err.println("File not Found");
         }
-        return fileData;
+        return fileData.trim();
     }
 }
