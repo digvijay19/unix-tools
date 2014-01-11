@@ -4,10 +4,15 @@ import digvijag.filesystem.ReadFile;
 
 public class Head {
     public static void main(String[] args) {
-        String fileData, result = "";
+        String fileName,fileData, result = "";
+        HeadOperation operations = new HeadOperation();
+        int numberOfLines;
+
         try {
-            fileData = new ReadFile().readFile(args[0]);
-            result = new HeadOperation().getHeadLines(fileData,10);
+            fileName = operations.getFileName(args);
+            numberOfLines = operations.getNumberOfLines(args);
+            fileData = new ReadFile().readFile(fileName);
+            result = operations.getHeadLines(fileData, numberOfLines);
 
         } catch (Exception e) {
             System.err.println("Something went wrong");
