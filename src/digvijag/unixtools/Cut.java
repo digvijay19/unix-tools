@@ -7,14 +7,18 @@ public class Cut {
         ReadFile rf = new ReadFile();
         CutOperations operations = new CutOperations();
         String fileName, fileData, delimiter;
-        int field = operations.getField(args);
-        delimiter = operations.getDelimeter(args);
-        fileName = operations.getFileName(args);
-        fileData = rf.readFile(fileName);
-        String lines[] = fileData.split("\r\n");
-        for (String line : lines) {
-            String[] fields = line.split(delimiter);
-            System.out.println(fields[field]);
+        try {
+            int field = operations.getField(args);
+            delimiter = operations.getDelimeter(args);
+            fileName = operations.getFileName(args);
+            fileData = rf.readFile(fileName);
+            String lines[] = fileData.split("\r\n");
+            for (String line : lines) {
+                String[] fields = line.split(delimiter);
+                System.out.println(fields[field]);
+            }
+        } catch (Exception e){
+            System.err.println("Something went wrong");
         }
     }
 }
