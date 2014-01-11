@@ -1,10 +1,10 @@
 package digvijag.unixtools;
 
-import digvijag.filesystem.ReadFile;
+import digvijag.filesystem.FileReaders;
 
 public class Cut {
     public static void main(String[] args) {
-        ReadFile rf = new ReadFile();
+        FileReaders rf = new FileReaders();
         CutOperations operations = new CutOperations();
         String fileName, fileData, delimiter, result;
         try {

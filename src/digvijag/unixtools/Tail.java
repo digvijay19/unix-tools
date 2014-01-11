@@ -1,6 +1,6 @@
 package digvijag.unixtools;
 
-import digvijag.filesystem.ReadFile;
+import digvijag.filesystem.FileReaders;
 
 public class Tail {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Tail {
         try {
             fileName = operations.getFileName(args);
             numberOfLines = operations.getNumberOfLines(args);
-            fileData = new ReadFile().readFile(fileName);
+            fileData = new FileReaders().readFile(fileName);
             result = operations.getTailLines(fileData, numberOfLines);
         } catch (Exception e) {
             System.err.println("Something went wrong");

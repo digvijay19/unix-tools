@@ -1,11 +1,11 @@
 package digvijag.unixtools;
 
-import digvijag.filesystem.ReadFile;
+import digvijag.filesystem.FileReaders;
 
 public class RemoveSpace {
     public static void main(String[] args) {
         String fileName, fileData = "", result;
-        ReadFile rf = new ReadFile();
+        FileReaders rf = new FileReaders();
         try {
             fileName = args[0];
             fileData = rf.readFile(fileName);
