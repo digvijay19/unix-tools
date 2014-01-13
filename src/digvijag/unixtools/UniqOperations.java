@@ -5,13 +5,14 @@ public class UniqOperations {
     public String getUniqueData(String fileData) {
 
         String[] lines = fileData.split("\r\n");
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < lines.length - 1; i++) {
             if (!lines[i].equals(lines[i + 1])) {
-                result += lines[i] + "\r\n";
+                result.append(lines[i]);
+                result.append("\r\n");
             }
         }
-        result += lines[lines.length - 1];
-        return result.trim();
+        result.append(lines[lines.length - 1]);
+        return result.toString().trim();
     }
 }

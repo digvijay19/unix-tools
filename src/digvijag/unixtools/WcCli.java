@@ -1,13 +1,13 @@
 package digvijag.unixtools;
 
-import digvijag.filesystem.FileReaders;
+import digvijag.filesystem.MyFileReader;
 
 import java.io.File;
 
 public class WcCli {
     static public void main(String[] fileNames) {
         WcOperations wcOperations = new WcOperations();
-        FileReaders rf = new FileReaders();
+        MyFileReader rf = new MyFileReader();
         File file;
         String fileData;
         try {

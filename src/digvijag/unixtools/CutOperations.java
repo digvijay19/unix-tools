@@ -32,12 +32,13 @@ public class CutOperations {
     }
 
     public String getCutResult(String fileData, String delimiter, int field) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         String lines[] = fileData.split("\r\n");
         for (String line : lines) {
             String[] fields = line.split(delimiter);
-            result += "\r\n" + fields[field];
+            result.append(fields[field]);
+            result.append("\r\n");
         }
-        return result.trim();
+        return result.toString().trim();
     }
 }

@@ -5,26 +5,28 @@ public class HeadTailOperation {
     public String getHeadLines(String fileData, int numberOflines) {
 
         String[] lines = fileData.split("\r\n");
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         int i = 0;
         while (i < numberOflines && i < lines.length) {
-            result += "\r\n" + lines[i];
+            result.append(lines[i]);
+            result.append("\r\n");
             i++;
         }
-        return result.trim();
+        return result.toString().trim();
     }
 
     public String getTailLines(String fileData, int numberOfLines) {
         String[] lines = fileData.split("\r\n");
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         int i = lines.length - numberOfLines;
         while (i < lines.length) {
-            result += "\r\n" + lines[i];
+            result.append(lines[i]);
+            result.append("\r\n");
             i++;
         }
-        return result.trim();
+        return result.toString().trim();
     }
 
     public String getFileName(String[] args) {

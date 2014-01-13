@@ -2,7 +2,7 @@ package digvijag.filesystem;
 
 import java.io.BufferedReader;
 
-public class FileReaders {
+public class MyFileReader {
     public String readFile(String fileName) {
         StringBuilder fileData = new StringBuilder();
         try {

@@ -1,6 +1,6 @@
 package digvijag.unixtools;
 
-import digvijag.filesystem.FileReaders;
+import digvijag.filesystem.MyFileReader;
 
 public class Head {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Head {
         try {
             fileName = operations.getFileName(args);
             numberOfLines = operations.getNumberOfLines(args);
-            fileData = new FileReaders().readFile(fileName);
+            fileData = new MyFileReader().readFile(fileName);
             result = operations.getHeadLines(fileData, numberOfLines);
 
         } catch (Exception e) {
