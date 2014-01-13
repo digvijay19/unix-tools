@@ -6,12 +6,12 @@ public class UniqOperations {
 
         String[] lines = fileData.split("\r\n");
         String result = "";
-        System.out.println(lines[0]);
-        for (int i = 1; i < lines.length; i++) {
-            if (!lines[i].equals(lines[i - 1])) {
-                result += "\r\n" + lines[i];
+        for (int i = 0; i < lines.length - 1; i++) {
+            if (!lines[i].equals(lines[i + 1])) {
+                result += lines[i] + "\r\n";
             }
         }
+        result += lines[lines.length - 1];
         return result.trim();
     }
 }

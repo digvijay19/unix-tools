@@ -19,7 +19,6 @@ public class HeadTailOperationTest {
         String data = "a\r\nb\r\nc\r\nd\r\ne\r\nf";
         String expected = "b\r\nc\r\nd\r\ne\r\nf";
         String actual = operations.getTailLines(data,5);
-        System.out.println(actual);
         assertEquals(expected,actual);
     }
 
