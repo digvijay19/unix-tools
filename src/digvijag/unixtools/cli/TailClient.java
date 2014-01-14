@@ -1,8 +1,9 @@
-package digvijag.unixtools;
+package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
+import digvijag.unixtools.lib.HeadTailOperation;
 
-public class Head {
+public class TailClient {
     public static void main(String[] args) {
         String fileName, fileData, result = "";
         HeadTailOperation operations = new HeadTailOperation();
@@ -12,8 +13,7 @@ public class Head {
             fileName = operations.getFileName(args);
             numberOfLines = operations.getNumberOfLines(args);
             fileData = new MyFileReader().readFile(fileName);
-            result = operations.getHeadLines(fileData, numberOfLines);
-
+            result = operations.getTailLines(fileData, numberOfLines);
         } catch (Exception e) {
             System.err.println("Something went wrong");
         }

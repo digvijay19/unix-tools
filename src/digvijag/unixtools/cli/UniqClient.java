@@ -1,8 +1,9 @@
-package digvijag.unixtools;
+package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
+import digvijag.unixtools.lib.UniqOperations;
 
-public class Uniq {
+public class UniqClient {
     public static void main(String[] args) {
         String fileName, fileData = "", result;
         MyFileReader rf = new MyFileReader();

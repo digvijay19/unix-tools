@@ -1,4 +1,4 @@
-package digvijag.unixtools;
+package digvijag.unixtools.lib;
 
 public class HeadTailOperation {
 

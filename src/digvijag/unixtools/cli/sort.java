@@ -1,4 +1,4 @@
-package digvijag.unixtools;
+package digvijag.unixtools.cli;
 
 public class sort {
     public static void main(String[] args) {

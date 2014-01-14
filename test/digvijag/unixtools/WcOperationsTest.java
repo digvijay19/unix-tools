@@ -1,5 +1,6 @@
 package digvijag.unixtools;
 
+import digvijag.unixtools.lib.WcOperations;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

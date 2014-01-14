@@ -1,8 +1,9 @@
-package digvijag.unixtools;
+package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
+import digvijag.unixtools.lib.CutOperations;
 
-public class Cut {
+public class CutClient {
     public static void main(String[] args) {
         MyFileReader rf = new MyFileReader();
         CutOperations operations = new CutOperations();
