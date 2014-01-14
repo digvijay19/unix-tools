@@ -1,10 +1,11 @@
-package digvijag.unixtools.lib;
+package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
+import digvijag.unixtools.lib.SpaceRemover;
 
 public class RemoveSpace {
     public static void main(String[] args) {
-        String fileName, fileData = "", result;
+        String fileName, fileData = "";
         MyFileReader rf = new MyFileReader();
         try {
             fileName = args[0];
@@ -12,7 +13,7 @@ public class RemoveSpace {
         } catch (Exception e) {
             System.err.println("SomeThing went Wrong");
         }
-        result = fileData.replaceAll(" +", " ");
-        System.out.println(result);
+        SpaceRemover spaceRemover = new SpaceRemover();
+        System.out.println(spaceRemover.removeExtraSpaces(fileData));
     }
 }
