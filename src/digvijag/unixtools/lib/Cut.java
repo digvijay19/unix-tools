@@ -1,6 +1,6 @@
 package digvijag.unixtools.lib;
 
-public class CutOperations {
+public class Cut {
 
     public int getField(String[] args) {
 

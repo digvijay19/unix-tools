@@ -1,12 +1,12 @@
 package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
-import digvijag.unixtools.lib.CutOperations;
+import digvijag.unixtools.lib.Cut;
 
 public class CutClient {
     public static void main(String[] args) {
         MyFileReader rf = new MyFileReader();
-        CutOperations operations = new CutOperations();
+        Cut operations = new Cut();
         String fileName, fileData, delimiter, result;
         try {
             int field = operations.getField(args);

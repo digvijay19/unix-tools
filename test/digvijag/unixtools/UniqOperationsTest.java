@@ -11,7 +11,6 @@ public class UniqOperationsTest {
         String data = "a\r\na\r\nb\r\na";
         String expected = "a\r\nb\r\na";
         String actual = new UniqOperations().getUniqueData(data);
-        System.out.println(actual);
         assertEquals(expected,actual);
     }
 }

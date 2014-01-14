@@ -1,12 +1,12 @@
 package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
-import digvijag.unixtools.lib.HeadTailOperation;
+import digvijag.unixtools.lib.Head;
 
 public class HeadClient {
     public static void main(String[] args) {
         String fileName, fileData, result = "";
-        HeadTailOperation operations = new HeadTailOperation();
+        Head operations = new Head();
         int numberOfLines;
 
         try {

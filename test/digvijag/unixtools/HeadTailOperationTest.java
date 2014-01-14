@@ -1,25 +1,17 @@
 package digvijag.unixtools;
 
-import digvijag.unixtools.lib.HeadTailOperation;
+import digvijag.unixtools.lib.Head;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
 public class HeadTailOperationTest {
-    HeadTailOperation operations = new HeadTailOperation();
+    Head operations = new Head();
     @Test
     public void testGetHeadLines() throws Exception {
         String data = "a\r\nb\r\nc\r\nd\r\ne\r\nf";
         String expected = "a\r\nb\r\nc\r\nd\r\ne";
         String actual = operations.getHeadLines(data,5);
-        assertEquals(expected,actual);
-    }
-
-    @Test
-    public void testGetTailLines() throws Exception {
-        String data = "a\r\nb\r\nc\r\nd\r\ne\r\nf";
-        String expected = "b\r\nc\r\nd\r\ne\r\nf";
-        String actual = operations.getTailLines(data,5);
         assertEquals(expected,actual);
     }
 
