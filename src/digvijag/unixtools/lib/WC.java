@@ -1,10 +1,10 @@
 package digvijag.unixtools.lib;
 
-public class WcOperations {
+public class WC {
     int totalWords = 0;
     String fileData = "";
 
-    public WcOperations(String fileData) {
+    public WC(String fileData) {
         this.fileData = fileData;
     }
 

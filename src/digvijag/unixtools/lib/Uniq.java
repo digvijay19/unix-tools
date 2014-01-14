@@ -1,6 +1,6 @@
 package digvijag.unixtools.lib;
 
-public class UniqOperations {
+public class Uniq {
 
     public String getUniqueData(String fileData) {
 
