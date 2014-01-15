@@ -16,8 +16,7 @@ public class WcArgumentsHandlerTest {
     @Test
     public void test_GetFileName_when_file_name_is_not_present() throws Exception {
         String[] args = {"-l","-c"};
-        String expected = null;
         String actual = new WcArgumentsHandler().getFileName(args);
-        assertEquals(expected,actual);
+        assertEquals(null,actual);
     }
 }
