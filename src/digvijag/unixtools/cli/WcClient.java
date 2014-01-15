@@ -2,21 +2,19 @@ package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
 import digvijag.unixtools.lib.WC;
+import digvijag.unixtools.lib.WcArgumentsHandler;
 
 import java.io.File;
 
 public class WcClient {
-    static public void main(String[] fileNames) {
+    static public void main(String[] args) {
         MyFileReader rf = new MyFileReader();
         File file;
-        String fileData;
-        try {
-            file = new File(fileNames[0]);
-            fileData = rf.readFile(fileNames[0]);
-        } catch (Exception e) {
-            System.err.println("File not Found");
-            return;
-        }
+        String fileData,fileName;
+        WcArgumentsHandler wcArgumentsHandler = new WcArgumentsHandler();
+        fileName = wcArgumentsHandler.getFileName(args);
+        file = new File(fileName);
+        fileData = rf.readFile(fileName);
         WC wc = new WC(fileData);
         int totalChars, totalLines, totalWords;
         totalChars = wc.countChars();
