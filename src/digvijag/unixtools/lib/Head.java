@@ -6,7 +6,6 @@ public class Head {
 
         String[] lines = fileData.split("\r\n");
         StringBuilder result = new StringBuilder();
-
         int i = 0;
         while (i < numberOflines && i < lines.length) {
             result.append(lines[i]);
