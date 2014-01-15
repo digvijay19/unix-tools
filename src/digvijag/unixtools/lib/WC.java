@@ -18,7 +18,8 @@ public class WC {
     }
 
     public int countWords() {
-        String[] lines = fileData.split("\r\n");
+        String filedataWithNoExtraSpaces = new SpaceRemover().removeExtraSpaces(fileData);
+        String[] lines = filedataWithNoExtraSpaces.split("\r\n");
         for (String item : lines) {
             totalWords += item.split(" ").length;
         }
