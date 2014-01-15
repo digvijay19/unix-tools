@@ -24,6 +24,14 @@ public class HeadOperationTest {
     }
 
     @Test
+    public void test_GetHeadLines_when_number_of_lines_is_negative() throws Exception {
+        String data = "a\r\nb\r\nc";
+        String expected = "";
+        String actual = operations.getHeadLines(data, -1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testGetFileName() throws Exception {
         String[] args = {"a.txt"};
         String fileName = operations.getFileName(args);
