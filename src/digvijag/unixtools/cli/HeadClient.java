@@ -2,16 +2,18 @@ package digvijag.unixtools.cli;
 
 import digvijag.filesystem.MyFileReader;
 import digvijag.unixtools.lib.Head;
+import digvijag.unixtools.lib.HeadTailArgumentHandler;
 
 public class HeadClient {
     public static void main(String[] args) {
         String fileName = "", fileData, result;
         Head operations = new Head();
+        HeadTailArgumentHandler headTailArgumentHandler = new HeadTailArgumentHandler();
         int numberOfLines;
 
         try {
-            fileName = operations.getFileName(args);
-            numberOfLines = operations.getNumberOfLines(args);
+            fileName = headTailArgumentHandler.getFileName(args);
+            numberOfLines = headTailArgumentHandler.getNumberOfLines(args);
             fileData = new MyFileReader().readFile(fileName);
             result = operations.getHeadLines(fileData, numberOfLines);
 
