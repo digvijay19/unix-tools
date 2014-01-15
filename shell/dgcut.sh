@@ -1,1 +1,1 @@
-java -cp out/artifacts/unix_tools_jar/unix-tools.jar digvijag.unixtools.cli.CutClient $@
+java -cp unix-tools.jar digvijag.unixtools.cli.CutClient $@

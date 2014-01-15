@@ -1,0 +1,1 @@
+java -cp unix-tools.jar digvijag.unixtools.cli.WcClient $@
