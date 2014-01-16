@@ -14,7 +14,7 @@ public class CutArgumentsHandlerTest {
         String[] args = {"-f2", "-d ", "a.txt"};
         int[] actual = operations.getFields(args);
         int[] expected = {2};
-        assertEquals(actual, expected);
+        assertEquals(true, Arrays.equals(expected, actual));
     }
 
     @Test
@@ -22,15 +22,15 @@ public class CutArgumentsHandlerTest {
         String[] args = {"-d ", "a.txt"};
         int[] field = operations.getFields(args);
         int[] expected = {1};
-        assertEquals(field, expected);
+        assertEquals(true, Arrays.equals(expected, field));
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void test_GetField_when_field_option_is_given_but_number_is_not_specified() throws Exception {
         String[] args = {"-f", "-d ", "a.txt"};
         int[] field = operations.getFields(args);
         int[] expected = {1};
-        assertEquals(field, expected);
+        assertEquals(true, Arrays.equals(expected, field));
     }
 
     @Test

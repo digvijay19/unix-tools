@@ -5,7 +5,7 @@ public class CutArgumentsHandler {
     public int[] getFields(String[] args) {
 
         for (String arg : args) {
-            if(arg.startsWith("-f")){
+            if (arg.startsWith("-f")) {
                 String[] fieldsInString = arg.replace("-f", "").split(",");
                 int[] fields = new int[fieldsInString.length];
                 for (int i = 0; i < fieldsInString.length; i++) {
@@ -19,7 +19,7 @@ public class CutArgumentsHandler {
 
     public String getDelimiter(String[] args) {
         for (String arg : args) {
-            if(arg.matches("-d.")){
+            if (arg.matches("-d.")) {
                 return arg.replace("-d", "");
             }
         }
@@ -29,7 +29,7 @@ public class CutArgumentsHandler {
     public String getFileName(String[] args) {
 
         for (String arg : args) {
-            if(!arg.startsWith("-")){
+            if (!arg.startsWith("-")) {
                 return arg;
             }
         }
