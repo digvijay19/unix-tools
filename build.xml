@@ -1,4 +1,4 @@
-<project name="unixtools">
+<project name="unixtools" default = "createZip">
 
     <target name = "clean">
         <delete dir="classes"/>
