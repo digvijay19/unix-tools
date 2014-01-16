@@ -1,0 +1,32 @@
+<project name="unixtools">
+
+    <target name = "clean">
+        <delete dir="classes"/>
+    </target>
+
+    <target name = "compile">
+        <mkdir dir = "classes"/>
+        <javac srcdir ="src" destdir ="classes" includeantruntime = "false"/>
+    </target>
+
+    <target name="createJar" depends="compile,createFolderStructure">
+        <jar destfile = "unix-tools/lib/unixtools" basedir = "classes"/>
+    </target>
+
+    <target name="copyScript">
+        <copy todir = "unix-tools/bin">
+            <fileset dir = "shell"/>
+        </copy>
+    </target>
+
+    <target name = "createFolderStructure">
+        <mkdir dir = "unix-tools"/>
+        <mkdir dir = "unix-tools/bin"/>
+        <mkdir dir = "unix-tools/lib"/>
+    </target>
+
+    <target name = "createZip" depends="createJar,copyScript">
+
+    </target>
+
+</project>
