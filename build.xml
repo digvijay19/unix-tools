@@ -29,7 +29,13 @@
         <copy file = "README.md" todir = "unix-tools"/>
     </target>
 
-    <target name = "createZip" depends="createJar,copyScript,copyReadme">
+    <target name = "createDocs">
+        <javadoc packagenames="digvijag.unixtools.*"
+                 sourcepath="src"
+                 destdir="unix-tools/docs"/>
+    </target>
+
+    <target name = "createZip" depends="createJar,copyScript,copyReadme,createDocs">
         <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
         <delete dir="unix-tools"/>
     </target>
