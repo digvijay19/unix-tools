@@ -25,8 +25,13 @@
         <mkdir dir = "unix-tools/lib"/>
     </target>
 
-    <target name = "createZip" depends="createJar,copyScript">
+    <target name = "copyReadme">
+        <copy file = "README.md" todir = "unix-tools"/>
+    </target>
 
+    <target name = "createZip" depends="createJar,copyScript,copyReadme">
+        <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
+        <delete dir="unix-tools"/>
     </target>
 
 </project>
