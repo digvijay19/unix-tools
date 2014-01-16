@@ -11,11 +11,11 @@ public class CutClient {
         CutArgumentsHandler cutArgumentsHandler = new CutArgumentsHandler();
         String fileName, fileData, delimiter, result;
         try {
-            int field = cutArgumentsHandler.getField(args);
+            int[] fields = cutArgumentsHandler.getFields(args);
             delimiter = cutArgumentsHandler.getDelimiter(args);
             fileName = cutArgumentsHandler.getFileName(args);
             fileData = rf.readFile(fileName);
-            result = operations.getCutResult(fileData, delimiter, field) ;
+            result = operations.getCutResult(fileData, delimiter, fields[0]) ;
             System.out.println(result);
         } catch (Exception e){
             System.err.println("Something went wrong");
