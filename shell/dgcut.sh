@@ -1,1 +1,1 @@
-java -cp $UNIX_TOOLS/lib/unix-tools digvijag.unixtools.cli.CutClient $@
+java -cp $UNIX_TOOLS/lib/unixtools.jar digvijag.unixtools.cli.CutClient $@
