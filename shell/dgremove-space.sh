@@ -1,1 +1,1 @@
-java -cp $UNIX_TOOLS/unix-tools.jar digvijag.unixtools.cli.RemoveSpace $@
+java -cp $UNIX_TOOLS/lib/unix-tools digvijag.unixtools.cli.RemoveSpace $@

@@ -1,1 +1,1 @@
-java -cp $UNIX_TOOLS/unix-tools.jar digvijag.unixtools.cli.WcClient $@
+java -cp $UNIX_TOOLS/lib/unix-tools digvijag.unixtools.cli.WcClient $@
