@@ -3,7 +3,7 @@ package digvijag.unixtools.cli;
 import digvijag.filesystem.MyFileReader;
 import digvijag.unixtools.lib.Sort;
 
-public class SortClient {
+public class SortClient1 {
     static public void main(String[] fileNames) {
         MyFileReader rf = new MyFileReader();
         String fileData;
