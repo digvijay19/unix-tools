@@ -28,12 +28,12 @@
                     <include name="**/*Test*" />
                 </fileset>
             </batchtest>
-            <formatter type = "failure" usefile = "false"/>
+            <formatter type = "brief" usefile = "false"/>
         </junit>
     </target>
 
     <target name="jar" depends="test">
-        <jar destfile = "unix-tools/lib/unixtools.jar" basedir = "build/classes"/>
+        <jar destfile = "unix-tools/lib/unixtools.jar" basedir = "build/classes/src"/>
     </target>
 
     <target name="copyScript">
