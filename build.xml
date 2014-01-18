@@ -5,12 +5,35 @@
     </target>
 
     <target name = "compile">
-        <mkdir dir = "classes"/>
-        <javac srcdir ="src" destdir ="classes" includeantruntime = "false"/>
+        <mkdir dir = "build"/>
+        <mkdir dir = "build/classes"/>
+        <mkdir dir = "build/classes/src"/>
+        <javac srcdir ="src" destdir ="build/classes/src" includeantruntime = "false"/>
     </target>
 
-    <target name="createJar" depends="compile,createFolderStructure">
-        <jar destfile = "unix-tools/lib/unixtools" basedir = "classes"/>
+    <target name = "compileTest" depends = "compile">
+        <mkdir dir = "build/classes/test"/>
+        <javac classpath="dependencies/test/junit-4.10.jar;build/classes/src" srcdir ="test" destdir ="build/classes/test" includeantruntime = "false"/>
+    </target>
+
+    <target name = "test" depends = "compileTest">
+        <junit>
+            <classpath>
+                <pathelement location="build/classes/src" />
+                <pathelement location="build/classes/test" />
+                <pathelement location="dependencies/test/junit-4.10.jar"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="build/classes/test">
+                    <include name="**/*Test*" />
+                </fileset>
+            </batchtest>
+            <formatter type = "failure" usefile = "false"/>
+        </junit>
+    </target>
+
+    <target name="jar" depends="test">
+        <jar destfile = "unix-tools/lib/unixtools.jar" basedir = "build/classes"/>
     </target>
 
     <target name="copyScript">
@@ -35,7 +58,7 @@
                  destdir="unix-tools/docs"/>
     </target>
 
-    <target name = "createZip" depends="createJar,copyScript,copyReadme,createDocs">
+    <target name = "createZip" depends="createFolderStructure,jar,copyScript,copyReadme,createDocs">
         <zip destfile = "unix-tools.zip" basedir = "unix-tools" update = "true"/>
         <delete dir="unix-tools"/>
     </target>
