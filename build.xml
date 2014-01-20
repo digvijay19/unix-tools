@@ -1,7 +1,7 @@
 <project name="unixtools" default = "createZip">
 
-    <target name = "clean">
-        <delete dir="classes"/>
+    <target name = "clean" description="cleans all the extra files generated for building.">
+        <delete dir="build"/>
     </target>
 
     <target name = "compile">
