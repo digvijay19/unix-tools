@@ -6,6 +6,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class HeadTailArgumentHandlerTest {
     HeadTailArgumentHandler operations = new HeadTailArgumentHandler();
+
     @Test
     public void testGetFileName() throws Exception {
         String[] args = {"a.txt"};
@@ -23,14 +24,14 @@ public class HeadTailArgumentHandlerTest {
     @Test
     public void test_GetNumberOfLines_when_number_of_lines_specified() throws Exception {
         String[] args = {"-n5", "a.txt"};
-        int actual = operations.getNumberOfLines(args);
+        int actual = operations.getNumberOfLines(args, 10);
         assertEquals(actual, 5);
     }
 
     @Test
     public void test_getNumberOfLines_when_number_not_specified() throws Exception {
         String[] args = {"a.txt"};
-        int actual = operations.getNumberOfLines(args);
+        int actual = operations.getNumberOfLines(args, 10);
         assertEquals(actual, 10);
     }
 }

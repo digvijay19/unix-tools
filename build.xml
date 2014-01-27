@@ -124,6 +124,7 @@
             <fileset dir = "shell"/>
         </copy>
         <copy file = "README.md" tofile = "build/distribute/README.md"/>
+        <copy file = "configuration/config.properties" tofile = "build/distribute/lib/config.properties"/>
     </target>
 
     <target name = "build" depends = "createFolderStructure">

@@ -11,12 +11,12 @@ public class HeadTailArgumentHandler {
         return null;
     }
 
-    public int getNumberOfLines(String[] args) {
+    public int getNumberOfLines(String[] args,int defaultLines) {
         for (String arg : args) {
             if (arg.startsWith("-n")) {
                 return Integer.parseInt(arg.replace("-n", ""));
             }
         }
-        return 10;
+        return defaultLines;
     }
 }
