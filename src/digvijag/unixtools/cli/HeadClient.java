@@ -16,10 +16,15 @@ public class HeadClient {
         int numberOfLines;
         InputStream inputStream;
         Properties properties = new Properties();
-        try {
+
+        try{
             inputStream = new FileInputStream(System.getenv("UNIX_TOOLS") + "/lib/config.properties");
             properties.load(inputStream);
             numberOfLines = Integer.parseInt(properties.getProperty("default.head.lines"));
+        } catch (Exception e){
+            numberOfLines = 10;
+        }
+        try {
             fileName = headTailArgumentHandler.getFileName(args);
             numberOfLines = headTailArgumentHandler.getNumberOfLines(args, numberOfLines);
             fileData = new MyFileReader().readFile(fileName);
